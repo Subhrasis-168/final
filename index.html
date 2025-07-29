@@ -1,315 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Happy Girlfriend Day Bee!</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="https://img.icons8.com/?size=100&id=581&format=png&color=000000"
-    />
-  </head>
-  <body>
-    <!-- Flowers Part -->
-    <body class="not-loaded">
-      <div class="night"></div>
-      <div class="flowers">
-        <div class="flower flower--1">
-          <div class="flower__leafs flower__leafs--1">
-            <div class="flower__leaf flower__leaf--1"></div>
-            <div class="flower__leaf flower__leaf--2"></div>
-            <div class="flower__leaf flower__leaf--3"></div>
-            <div class="flower__leaf flower__leaf--4"></div>
-            <div class="flower__white-circle"></div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Girlfriend Day Bee!</title>
+  <link rel="icon" href="https://img.icons8.com/?size=100&id=581&format=png&color=000000" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            <div class="flower__light flower__light--1"></div>
-            <div class="flower__light flower__light--2"></div>
-            <div class="flower__light flower__light--3"></div>
-            <div class="flower__light flower__light--4"></div>
-            <div class="flower__light flower__light--5"></div>
-            <div class="flower__light flower__light--6"></div>
-            <div class="flower__light flower__light--7"></div>
-            <div class="flower__light flower__light--8"></div>
-          </div>
-          <div class="flower__line">
-            <div class="flower__line__leaf flower__line__leaf--1"></div>
-            <div class="flower__line__leaf flower__line__leaf--2"></div>
-            <div class="flower__line__leaf flower__line__leaf--3"></div>
-            <div class="flower__line__leaf flower__line__leaf--4"></div>
-            <div class="flower__line__leaf flower__line__leaf--5"></div>
-            <div class="flower__line__leaf flower__line__leaf--6"></div>
-          </div>
-        </div>
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ffe6f0, #c1f0f6);
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 2s ease-in;
+    }
 
-        <div class="flower flower--2">
-          <div class="flower__leafs flower__leafs--2">
-            <div class="flower__leaf flower__leaf--1"></div>
-            <div class="flower__leaf flower__leaf--2"></div>
-            <div class="flower__leaf flower__leaf--3"></div>
-            <div class="flower__leaf flower__leaf--4"></div>
-            <div class="flower__white-circle"></div>
+    body.loaded {
+      opacity: 1;
+    }
 
-            <div class="flower__light flower__light--1"></div>
-            <div class="flower__light flower__light--2"></div>
-            <div class="flower__light flower__light--3"></div>
-            <div class="flower__light flower__light--4"></div>
-            <div class="flower__light flower__light--5"></div>
-            <div class="flower__light flower__light--6"></div>
-            <div class="flower__light flower__light--7"></div>
-            <div class="flower__light flower__light--8"></div>
-          </div>
-          <div class="flower__line">
-            <div class="flower__line__leaf flower__line__leaf--1"></div>
-            <div class="flower__line__leaf flower__line__leaf--2"></div>
-            <div class="flower__line__leaf flower__line__leaf--3"></div>
-            <div class="flower__line__leaf flower__line__leaf--4"></div>
-          </div>
-        </div>
+    .top-banner {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ff9aa2;
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      font-weight: bold;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      font-family: 'Pacifico', cursive;
+    }
 
-        <div class="flower flower--3">
-          <div class="flower__leafs flower__leafs--3">
-            <div class="flower__leaf flower__leaf--1"></div>
-            <div class="flower__leaf flower__leaf--2"></div>
-            <div class="flower__leaf flower__leaf--3"></div>
-            <div class="flower__leaf flower__leaf--4"></div>
-            <div class="flower__white-circle"></div>
+    .flowers {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+    }
 
-            <div class="flower__light flower__light--1"></div>
-            <div class="flower__light flower__light--2"></div>
-            <div class="flower__light flower__light--3"></div>
-            <div class="flower__light flower__light--4"></div>
-            <div class="flower__light flower__light--5"></div>
-            <div class="flower__light flower__light--6"></div>
-            <div class="flower__light flower__light--7"></div>
-            <div class="flower__light flower__light--8"></div>
-          </div>
-          <div class="flower__line">
-            <div class="flower__line__leaf flower__line__leaf--1"></div>
-            <div class="flower__line__leaf flower__line__leaf--2"></div>
-            <div class="flower__line__leaf flower__line__leaf--3"></div>
-            <div class="flower__line__leaf flower__line__leaf--4"></div>
-          </div>
-        </div>
+    .love-message {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      text-align: center;
+      color: #e91e63;
+      font-family: 'Pacifico', cursive;
+      z-index: 10;
+      animation: fadeIn 3s ease-in-out;
+    }
 
-        <div class="grow-ans" style="--d: 1.2s">
-          <div class="flower__g-long">
-            <div class="flower__g-long__top"></div>
-            <div class="flower__g-long__bottom"></div>
-          </div>
-        </div>
+    .love-message h1 {
+      font-size: 2.5rem;
+    }
 
-        <div class="growing-grass">
-          <div class="flower__grass flower__grass--1">
-            <div class="flower__grass--top"></div>
-            <div class="flower__grass--bottom"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-            <div class="flower__grass__overlay"></div>
-          </div>
-        </div>
+    .love-message p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
 
-        <div class="growing-grass">
-          <div class="flower__grass flower__grass--2">
-            <div class="flower__grass--top"></div>
-            <div class="flower__grass--bottom"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-            <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-            <div class="flower__grass__overlay"></div>
-          </div>
-        </div>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        <div class="grow-ans" style="--d: 2.4s">
-          <div class="flower__g-right flower__g-right--1">
-            <div class="leaf"></div>
-          </div>
-        </div>
+    .hearts::before {
+      content: "💖";
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      animation: floatHearts 8s linear infinite;
+      z-index: 5;
+    }
 
-        <div class="grow-ans" style="--d: 2.8s">
-          <div class="flower__g-right flower__g-right--2">
-            <div class="leaf"></div>
-          </div>
-        </div>
+    @keyframes floatHearts {
+      0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-100px, -800px) scale(1.5);
+        opacity: 0;
+      }
+    }
 
-        <div class="grow-ans" style="--d: 2.8s">
-          <div class="flower__g-front">
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div
-              class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8"
-            >
-              <div class="flower__g-front__leaf"></div>
-            </div>
-            <div class="flower__g-front__line"></div>
-          </div>
-        </div>
+    /* Simplified Flower & Grass Mockup (representative only) */
+    .flower {
+      position: absolute;
+      bottom: 0;
+      width: 40px;
+      height: 100px;
+      left: 50%;
+      margin-left: -20px;
+      animation: grow 3s ease-in-out forwards;
+    }
 
-        <div class="grow-ans" style="--d: 3.2s">
-          <div class="flower__g-fr">
-            <div class="leaf"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-            <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-          </div>
-        </div>
+    .flower::before {
+      content: "🌸";
+      font-size: 3rem;
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-        <div class="long-g long-g--0">
-          <div class="grow-ans" style="--d: 3s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 2.2s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.4s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.6s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+    .flower::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      height: 60px;
+      background: green;
+      transform: translateX(-50%);
+    }
 
-        <div class="long-g long-g--1">
-          <div class="grow-ans" style="--d: 3.6s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.8s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.2s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+    @keyframes grow {
+      0% { transform: scaleY(0); opacity: 0; }
+      100% { transform: scaleY(1); opacity: 1; }
+    }
 
-        <div class="long-g long-g--2">
-          <div class="grow-ans" style="--d: 4s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.2s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.4s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.6s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+    .grass {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(to top, #44c767, transparent);
+      z-index: 1;
+    }
 
-        <div class="long-g long-g--3">
-          <div class="grow-ans" style="--d: 4s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.2s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.6s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+    /* Audio Controls (optional to hide) */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 💌 Banner -->
+  <div class="top-banner">💌 With Love, Forever Yours...</div>
 
-        <div class="long-g long-g--4">
-          <div class="grow-ans" style="--d: 4s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.2s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.6s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+  <!-- 💖 Floating Heart -->
+  <div class="hearts"></div>
 
+  <!-- 🌺 Message -->
+  <div class="love-message">
+    <h1>Happy Girlfriend Day, My Love! 💐</h1>
+    <p>You are the flower in the garden of my heart. 🌸</p>
+  </div>
 
-        <div class="long-g long-g--6">
-          <div class="grow-ans" style="--d: 4.2s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.4s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.6s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 4.8s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
+  <!-- 🌷 Flowers and Grass -->
+  <div class="flowers">
+    <div class="flower" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="flower" style="left: 50%; animation-delay: 1.5s;"></div>
+    <div class="flower" style="left: 70%; animation-delay: 2s;"></div>
+    <div class="grass"></div>
+  </div>
 
-        <div class="long-g long-g--7">
-          <div class="grow-ans" style="--d: 3s">
-            <div class="leaf leaf--0"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.2s">
-            <div class="leaf leaf--1"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.5s">
-            <div class="leaf leaf--2"></div>
-          </div>
-          <div class="grow-ans" style="--d: 3.6s">
-            <div class="leaf leaf--3"></div>
-          </div>
-        </div>
-      </div>
-    </body>
+  <!-- 🎶 Romantic Background Music -->
+  <audio autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- 🌟 JS Fade In -->
+  <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
 </html>
